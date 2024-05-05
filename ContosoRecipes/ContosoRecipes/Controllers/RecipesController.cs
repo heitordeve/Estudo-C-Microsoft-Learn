@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoRecipes.Controllers
@@ -8,9 +9,22 @@ namespace ContosoRecipes.Controllers
     public class RecipesController : ControllerBase
     {
         [HttpGet]
-        public string[] GetDishes() {
-            string[] dishes = { "Oxtail", "Curry Chicken", "Dumplings"};
-            return dishes;
+        public ActionResult GetRecipes() {
+            string[] recipes = { "Oxtail", "Curry Chicken", "Dumplings"};
+
+            if(recipes.Any())
+                return NotFound();
+            return Ok(recipes);
+        }
+      
+
+        [HttpDelete]
+        public ActionResult DeleteRecipes() {
+            bool badThingsHappended = false;
+
+            if (badThingsHappended)
+                return BadRequest();
+            return NoContent();
         }
     }
 }
