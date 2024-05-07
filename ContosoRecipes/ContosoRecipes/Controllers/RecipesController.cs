@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoRecipes.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/recipes")]
     [ApiController]
     public class RecipesController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("listAll")]
         public ActionResult GetRecipes() {
             string[] recipes = { "Oxtail", "Curry Chicken", "Dumplings"};
 
@@ -18,8 +18,8 @@ namespace ContosoRecipes.Controllers
         }
       
 
-        [HttpDelete]
-        public ActionResult DeleteRecipes() {
+        [HttpDelete("{id}")]
+        public ActionResult DeleteRecipes(string id) {
             bool badThingsHappended = false;
 
             if (badThingsHappended)

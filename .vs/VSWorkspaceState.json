@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ContosoRecipes",
+    "\\ContosoRecipes\\ContosoRecipes",
+    "\\ContosoRecipes\\ContosoRecipes\\Controllers"
   ],
-  "SelectedNode": "\\PizzaStore",
+  "SelectedNode": "\\ContosoRecipes\\ContosoRecipes\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
